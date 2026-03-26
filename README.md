@@ -67,6 +67,14 @@ docker run -d --name mongo -p 27017:27017 mongo
 
 Or start your local MongoDB instance if installed natively.
 
+#### Restoring the Database Backup
+
+To replicate the existing data (games, users, and reviews) on another device, you can restore the included database backup:
+
+```bash
+mongorestore --uri="mongodb://localhost:27017/gaming-platform" --drop db-backup/gaming-platform
+```
+
 ### 3. Set up the Backend
 
 ```bash
@@ -113,7 +121,7 @@ Run all three services in separate terminals:
 docker run -d --name mongo -p 27017:27017 mongo
 
 # Terminal 2 — Backend
-cd backend && npm install && npm start
+cd backend && npm install && node server.js
 
 # Terminal 3 — Frontend
 cd frontend && npm install && npm run dev
