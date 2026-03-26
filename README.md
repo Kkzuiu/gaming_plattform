@@ -8,34 +8,37 @@ A full-stack gaming platform where users can browse games, manage their personal
 
 ### Frontend
 
-| Technology | Purpose |
-| --- | --- |
+
+| Technology                  | Purpose                                    |
+| --------------------------- | ------------------------------------------ |
 | **Next.js 16** (App Router) | React framework with server-side rendering |
-| **React 19** | UI library |
-| **TypeScript** | Type-safe JavaScript |
-| **Tailwind CSS v4** | Utility-first CSS framework |
-| **shadcn/ui** (Radix UI) | Accessible component primitives |
-| **Lucide React** | Icon library |
-| **React Hook Form + Zod** | Form handling & validation |
-| **Recharts** | Data visualisation / charts |
-| **next-themes** | Dark / light mode support |
+| **React 19**                | UI library                                 |
+| **TypeScript**              | Type-safe JavaScript                       |
+| **Tailwind CSS v4**         | Utility-first CSS framework                |
+| **shadcn/ui** (Radix UI)    | Accessible component primitives            |
+| **Lucide React**            | Icon library                               |
+| **React Hook Form + Zod**   | Form handling & validation                 |
+| **Recharts**                | Data visualisation / charts                |
+| **next-themes**             | Dark / light mode support                  |
 
 ### Backend
 
-| Technology | Purpose |
-| --- | --- |
-| **Express 5** | Web framework for Node.js |
-| **Mongoose 9** | MongoDB ODM |
-| **JSON Web Tokens** | Stateless authentication |
-| **bcryptjs** | Password hashing |
-| **express-validator** | Request validation middleware |
-| **dotenv** | Environment variable management |
-| **CORS** | Cross-origin resource sharing |
+
+| Technology            | Purpose                         |
+| --------------------- | ------------------------------- |
+| **Express 5**         | Web framework for Node.js       |
+| **Mongoose 9**        | MongoDB ODM                     |
+| **JSON Web Tokens**   | Stateless authentication        |
+| **bcryptjs**          | Password hashing                |
+| **express-validator** | Request validation middleware   |
+| **dotenv**            | Environment variable management |
+| **CORS**              | Cross-origin resource sharing   |
 
 ### Database
 
-| Technology | Purpose |
-| --- | --- |
+
+| Technology  | Purpose                 |
+| ----------- | ----------------------- |
 | **MongoDB** | NoSQL document database |
 
 ---
@@ -53,7 +56,7 @@ A full-stack gaming platform where users can browse games, manage their personal
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/gaming-platform.git
+git clone https://git.gibb.ch/m1651/gaming-platform.git
 cd gaming-platform
 ```
 
@@ -93,9 +96,7 @@ JWT_SECRET=your-secret-key
 Start the server:
 
 ```bash
-npm start          # production
-# or
-npx nodemon server.js   # development (auto-reload)
+node server.js
 ```
 
 The API will be available at **http://localhost:5001**.
@@ -163,23 +164,24 @@ gaming-platform/
 
 ## API Overview
 
-| Method | Endpoint | Auth | Description |
-| --- | --- | --- | --- |
-| `POST` | `/api/auth/register` | ✗ | Register a new user |
-| `POST` | `/api/auth/login` | ✗ | Login & receive JWT |
-| `GET` | `/api/users/me` | ✓ | Current user profile |
-| `GET` | `/api/users/me/library` | ✓ | User's game library |
-| `POST` | `/api/users/me/library/:gameId` | ✓ | Add game to library |
-| `DELETE` | `/api/users/me/library/:gameId` | ✓ | Remove game from library |
-| `GET` | `/api/games` | ✗ | List all games |
-| `GET` | `/api/games/:id` | ✗ | Get game details |
-| `POST` | `/api/games` | ✗ | Create a game |
-| `PUT` | `/api/games/:id` | ✗ | Update a game |
-| `DELETE` | `/api/games/:id` | ✗ | Delete a game |
-| `GET` | `/api/reviews/game/:gameId` | ✗ | Reviews for a game |
-| `POST` | `/api/reviews` | ✓ | Create a review |
-| `PUT` | `/api/reviews/:id` | ✓ | Update own review |
-| `DELETE` | `/api/reviews/:id` | ✓ | Delete own review |
+
+| Method   | Endpoint                        | Auth | Description              |
+| -------- | ------------------------------- | ---- | ------------------------ |
+| `POST`   | `/api/auth/register`            | ✗   | Register a new user      |
+| `POST`   | `/api/auth/login`               | ✗   | Login & receive JWT      |
+| `GET`    | `/api/users/me`                 | ✓   | Current user profile     |
+| `GET`    | `/api/users/me/library`         | ✓   | User's game library      |
+| `POST`   | `/api/users/me/library/:gameId` | ✓   | Add game to library      |
+| `DELETE` | `/api/users/me/library/:gameId` | ✓   | Remove game from library |
+| `GET`    | `/api/games`                    | ✗   | List all games           |
+| `GET`    | `/api/games/:id`                | ✗   | Get game details         |
+| `POST`   | `/api/games`                    | ✗   | Create a game            |
+| `PUT`    | `/api/games/:id`                | ✗   | Update a game            |
+| `DELETE` | `/api/games/:id`                | ✗   | Delete a game            |
+| `GET`    | `/api/reviews/game/:gameId`     | ✗   | Reviews for a game       |
+| `POST`   | `/api/reviews`                  | ✓   | Create a review          |
+| `PUT`    | `/api/reviews/:id`              | ✓   | Update own review        |
+| `DELETE` | `/api/reviews/:id`              | ✓   | Delete own review        |
 
 > Full API documentation is available in [`backend/API.md`](backend/API.md).
 
@@ -189,14 +191,9 @@ gaming-platform/
 
 ### Backend (`backend/.env`)
 
-| Variable | Default | Description |
-| --- | --- | --- |
-| `PORT` | `5001` | Server port |
-| `MONGO_URI` | `mongodb://localhost:27017/gaming-platform` | MongoDB connection string |
-| `JWT_SECRET` | — | Secret key for signing JWTs |
 
----
-
-## License
-
-ISC
+| Variable     | Default                                     | Description                 |
+| ------------ | ------------------------------------------- | --------------------------- |
+| `PORT`       | `5001`                                      | Server port                 |
+| `MONGO_URI`  | `mongodb://localhost:27017/gaming-platform` | MongoDB connection string   |
+| `JWT_SECRET` | —                                          | Secret key for signing JWTs |
